@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mngo": "^0.4.4",
+    "sirloin": "^0.8.5"
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
