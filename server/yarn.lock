@@ -155,10 +155,10 @@ mime-types@^2.1.20:
   dependencies:
     mime-db "~1.37.0"
 
-mngo@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/mngo/-/mngo-0.4.4.tgz#20133ba3fdadb1bdb6138c4ba091253513c16513"
-  integrity sha512-YUP9lcDXnmt6ZuYgmX3bsZGCfrSChuE7adHVwrLvPJd8pHbeTCCgVxyk7Ry0Ql8AUqMSlYpwzS0fS5iimjTGrg==
+mngo@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/mngo/-/mngo-0.5.0.tgz#c8270699c2bb537a509e63c715190360358500f2"
+  integrity sha512-TDlCe1C+bwXAIu/aWf++YUVaBplkbEFXMSyt9vuOakS0XDZwcbaoUTSo+Q1nAiQiYJSc9BqxgpVpoU1WVWQ2UA==
   dependencies:
     mongodb "^3.1.8"
 

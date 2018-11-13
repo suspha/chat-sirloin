@@ -10,18 +10,15 @@ import filters from './lib/filters.js'
 const Socket = require('wsrecon')
 const socket = new Socket('ws://localhost:8081')
 
-socket.on('open', (event) => {
+socket.on('open', async (event) => {
   console.log('Connection open')
-  socket.send({ action: 'load' })
+  const { result } = await socket.fetch({ action: 'load' })
+  store.commit('messages', result)
 })
 
 socket.on('message', (data, event) => {
   console.log('Received message', data)
-  if (data.constructor === Array) {
-    store.commit('messages', data)
-  } else {
-    store.commit('message', data)
-  }
+  store.commit('message', data)
 })
 
 //Gjøre socket tilgjengelig i alle components
