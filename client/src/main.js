@@ -12,13 +12,13 @@ const socket = new Socket('ws://localhost:8081')
 
 socket.on('open', async (event) => {
   console.log('Connection open')
-  const { result } = await socket.fetch({ action: 'load' })
-  store.commit('messages', result)
 })
 
 socket.on('message', (data, event) => {
   console.log('Received message', data)
-  store.commit('message', data)
+  if (data.action === 'message') {
+    store.commit('message', data.result)
+  }
 })
 
 //Gjøre socket tilgjengelig i alle components
