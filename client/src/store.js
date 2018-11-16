@@ -22,12 +22,9 @@ export default new Vuex.Store({
       state.username = null
     },
     delete: (state, _id) => {
-      state.messages = state.messages.filter(x => x._id !== _id)  
+      state.messages = state.messages.filter(x => x._id !== _id)
     }
   },
   actions: {
-  },
-  getters: {
-    messages: state => state.messages
   }
 })

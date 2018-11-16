@@ -1,5 +1,5 @@
 const filters = {}
- 
+
 filters.date = (date) => {
   if(!date){
     return ''
@@ -7,7 +7,7 @@ filters.date = (date) => {
   // sjekke om det er en string eller date
   if(typeof date === 'string') {
     date = new Date(date)
-  } 
+  }
   const day = date.getDate()
   const month = date.getMonth()
   const year = date.getFullYear().toString().substr(-2)
