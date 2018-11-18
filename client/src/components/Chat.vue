@@ -1,28 +1,33 @@
 <template>
-  <div class="hello">
-    <div v-if="!username">
-      <h3>Login</h3>
-      <form @submit.prevent="submitLogin">
-        <el-input placeholder="Write username please" v-model="login"></el-input>
-      </form>
-    </div>
-    <div v-else>
-      <h2>Welcome: {{username}}!</h2>
-      <button class="logout-btn" @click="logout">Logout</button>
-      <form @submit.prevent="handleSubmit">
-        <el-input placeholder="Write something" v-model="input"></el-input>
-      </form>
-      <ChatList :messages="messages" />
-    </div>
+  <div class="chat">
+    <el-container>
+    <Group />
+      <div v-if="!username">
+        <h2>Login</h2>
+        <form @submit.prevent="submitLogin">
+          <el-input placeholder="Write username please" v-model="login"></el-input>
+        </form>
+      </div>
+      <div v-else>
+        <h2>Welcome: {{username}}!</h2>
+        <el-button type="danger" round class="logout-btn" @click="logout">Logout</el-button>
+        <form @submit.prevent="handleSubmit">
+          <el-input placeholder="Write something" v-model="input"></el-input>
+        </form>
+        <ChatList :messages="messages" />
+      </div>
+    </el-container>
   </div>
 </template>
 
 <script>
 import ChatList from './ChatList.vue'
+import Group from './Group.vue'
+
 export default {
   name: 'Chat',
   //Deklarere
-  components: { ChatList },
+  components: { ChatList, Group },
   // created() {
   //   this.login = 'Susana'
   //   setTimeout(() => {
@@ -74,20 +79,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+.chat {
+  text-align: center;
+  margin: 2rem;
+}
+
+h2 {
+  margin: 40px 0;
 }
 a {
   color: #42b983;
 }
-.logout-btn {
-  border: 2px solid #f65008;
-  background-color: #fff;
-  color:#f65008;
-  padding: 6px 16px;
-  border-radius: 10px;
-  font-size: 16px;
-}
+
 form {
   margin-top: 1rem;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="room1">
     <Chat/>
   </div>
 </template>
@@ -9,7 +9,7 @@
 import Chat from '@/components/Chat.vue'
 
 export default {
-  name: 'home',
+  name: 'room1',
   components: {
     Chat
   }

@@ -36,3 +36,7 @@ app.action('update', async (data) => {
   console.log(data)
   await db.get('message').update({_id: db.id(data._id)}, {content: data.content})
 })
+
+app.action('add', async (data, client) => {
+await db.get('addNewGroup').insert({ })
+})
